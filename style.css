@@ -1,0 +1,163 @@
+body{
+  height: 100vh;
+  width:96%;
+  margin:auto;
+  padding:auto;
+  justify-content:center;
+  align-items: center;
+  min-height: 100vh;
+  background:#060c21;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.headline{
+  margin:auto;
+  padding-bottom: 1.5em;
+  font-size: 25px;
+  color:#afaeae;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline .highlight{
+  color:rgb(121, 248, 109);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.container{
+  margin:2rem;
+  position: relative;
+  width:96%;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap:0 60px;
+  }
+
+  
+
+.container .box{
+  position: relative;
+  height:450px;
+  width: 350px;
+  background:#060c21;
+  display:flex;
+  flex-direction: column;
+  padding: 0.9em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border:1px solid rgb(2, 0, 88);
+}
+
+
+/*skewed styling*/
+.container .box:before{
+  content:'';
+  position: absolute;
+  top:-3px;
+  left:-3px;
+  right:-3px;
+  bottom:-3px;
+  /*border color style end*/
+  background:#fff;
+  
+  transform: skew(8deg, -8deg);
+  z-index:-1;
+}
+
+.container .box:nth-child(1):before{
+  background:linear-gradient(315deg, #ff0057, #e64a19);
+}
+.container .box:nth-child(2):before{
+  background:linear-gradient(315deg, #89ff00,#00bcd4);
+}
+.container .box:nth-child(3):before{
+  background:linear-gradient(315deg, #e91e63,#37f737);
+}
+
+.container .box:after{
+  content:'';
+  position: absolute;
+ 
+  width:55%;
+  height:100%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.content{
+  position: relative;
+  padding:2em;
+  transform: translateY(40px);
+}
+
+
+/*01  02  03*/
+.box .content h2{
+  position: relative;
+  /*top:-50px;*/
+  right:20px;
+  margin:0;
+  padding-top:0;
+  font-size: 8em;        
+  color:rgba(255,255,255,0.05);
+  transition:0.5s;
+}
+
+.box:hover .content h2{
+  top:-100px;      /*bounces on hover*/
+}
+
+
+/*courses name*/
+.box .content h3{
+  margin:0 0 10px;
+  padding:0;
+  font-size: 24px;
+  font-weight: 500;
+  color:#fff;
+}
+
+.box .content h3 .highlight{
+  color:rgb(49, 221, 14);
+}
+
+
+
+.box .content p{
+  margin:0;
+  padding-bottom:20px;
+  color:rgb(248, 203, 203);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.box .content a{
+  position: relative;
+  margin:20px 0 0;
+  padding:10px 20px;
+  text-decoration: none;
+  border:1px solid #fff;
+  display:inline;
+  color:#fff;
+  transition: 0.5s;
+  transform: translateY(-40px);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.box:hover .content a{
+  transform: translateY(0);
+  opacity: 1;
+  visibility:visible ;
+}
+
+.box .content a:hover{
+  color:#000;
+  background: #fff;
+}
